@@ -1,0 +1,8 @@
+/* シンプルなテストCSS */
+section {
+  background-color: #ffcccc !important;
+}
+
+h1 {
+  color: red !important;
+}

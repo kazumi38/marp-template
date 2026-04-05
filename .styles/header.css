@@ -1,0 +1,14 @@
+/* 取り扱い注意アイコンをページタイトルの左に表示 */
+section::before {
+    content: "⚠️";
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 24px;
+    vertical-align: middle;
+}
+
+/* ページタイトル領域のスタイル */
+section h1 {
+    display: flex;
+    align-items: center;
+}
