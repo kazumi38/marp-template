@@ -1,0 +1,54 @@
+ /* @theme main */
+@import 'default';
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap');
+
+:root {
+    /* カラーパレット */
+    --color-primary: #1e88e5;
+    --color-secondary: #6b7280;
+    --color-white: #ffffff;
+
+    /* フォント */
+    --font: Arial, 'メイリオ', sans-serif;
+
+    /* フォントサイズ */
+    --font-size-title-large: 80px;
+    --font-size-title-medium: 60px;
+    --font-size-title-small: 48px;
+    --font-size-body-title: 48px;
+    --font-size-body-text: 40px;
+    --font-size-caption: 32px; 
+
+}
+
+/* ページ全体の設定 */
+section {
+    font-family: var(--font);
+    background: var(--color-white);
+    color: var(--color-primary);
+}
+
+/* ページタイトルの設定 */
+section.title {
+    background: var(--color-white);
+    color: var(--color-primary);
+
+    
+}
+
+section.title h1 {
+    display: flex;
+    flex-direction: column;
+    /* 上寄せにして上部に余白を取ることで、タイトルをスライド高さの約75%付近に配置 */
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    padding-top: 25vh;
+    /* ビューポート高さの75%だけ上から余白を取る */
+    font-size: var(--font-size-title-large);
+    box-sizing: border-box;
+}
+section.title h2 {
+    font-size: var(--font-size-title-medium);
+    text-align: left;
+}
