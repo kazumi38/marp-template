@@ -1,0 +1,36 @@
+{
+  "name": "marp-jp-exec-template",
+  "version": "1.0.0",
+  "description": "Marp theme for Japanese executive presentation slides",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run pdf",
+    "pdf": "marp examples/*.md --output samples/ --pdf",
+    "watch": "marp examples/*.md --watch",
+    "serve": "marp examples/*.md --server"
+  },
+  "keywords": [
+    "marp",
+    "theme",
+    "japanese",
+    "presentation",
+    "slides",
+    "executive"
+  ],
+  "author": "kazumi38",
+  "license": "MIT",
+  "dependencies": {
+    "@marp-team/marp-cli": ">=1.0.0"
+  },
+  "marpConfig": {
+    "theme": "./.styles/theme-jp-exec.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kazumi38/marp-template.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kazumi38/marp-template/issues"
+  },
+  "homepage": "https://github.com/kazumi38/marp-template#readme"
+}

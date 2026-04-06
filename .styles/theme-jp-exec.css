@@ -1,0 +1,726 @@
+/* Marp Theme: Japanese Executive Presentation Slides */
+/* Version: 1.0.0 */
+/* Author: kazumi38 */
+/* Description: Theme for Japanese executive presentation slides with 30+ design patterns */
+
+/* ===========================================
+   CSS Custom Properties (Color Palette)
+   =========================================== */
+
+:root {
+  /* Base Colors */
+  --color-text-base: #232F3E;
+  --color-text-light: #666666;
+  --color-border: #CCCCCC;
+  --color-bg: #FFFFFF;
+
+  /* Accent Colors (75% rule applied) */
+  --color-accent-red: #BF4040;
+  --color-accent-blue: #4040BF;
+  --color-accent-green: #40BF40;
+}
+
+/* ===========================================
+   Font Imports and Stack
+   =========================================== */
+
+/* Google Fonts: Noto Sans JP for web fallback */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+
+/* Font Stack Definition */
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, li {
+  font-family: 'Hiragino Sans', 'Yu Gothic', 'Noto Sans JP', sans-serif;
+  color: var(--color-text-base);
+}
+
+code, pre {
+  font-family: 'Monaco', 'Courier New', monospace;
+}
+
+/* ===========================================
+   Base Slide Styles
+   =========================================== */
+
+section {
+  background: var(--color-bg);
+  color: var(--color-text-base);
+}
+
+/* ===========================================
+   Layout Classes (Title and Body Slides)
+   =========================================== */
+
+/* Title Slide Layout */
+.title-slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 40px;
+}
+
+.title-slide h1 {
+  font-size: 28pt;
+  color: var(--color-text-base);
+  font-weight: 700;
+  margin: 0 0 20px 0;
+  text-align: center;
+}
+
+.title-slide p {
+  font-size: 12pt;
+  color: var(--color-text-base);
+  opacity: 0.75;
+  margin: 5px 0;
+  text-align: center;
+}
+
+/* Body Slide Layout */
+.body-slide {
+  display: grid;
+  grid-template-rows: auto auto auto 1fr;
+  gap: 15px;
+  padding: 40px;
+  height: 100%;
+}
+
+.body-slide h1 {
+  font-size: 18pt;
+  color: var(--color-text-base);
+  text-align: right;
+  margin: 0;
+  padding: 0 20px 0 0;
+  font-weight: 700;
+}
+
+.body-slide .divider {
+  width: 100%;
+  height: 3px;
+  background: var(--color-text-base);
+  margin: -10px 0 10px 0;
+}
+
+.body-slide p.lead {
+  font-size: 16pt;
+  color: var(--color-text-base);
+  opacity: 0.9;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.body-slide .content {
+  overflow: auto;
+}
+
+/* ===========================================
+   Design Patterns (30+ classes)
+   =========================================== */
+
+/* Card Patterns */
+.pattern-card-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.pattern-card-2col div {
+  border: 1px solid var(--color-border);
+  padding: 15px;
+  background: #f9f9f9;
+}
+
+.pattern-card-3col {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.pattern-card-3col div {
+  border: 1px solid var(--color-border);
+  padding: 15px;
+  background: #f9f9f9;
+}
+
+.pattern-card-4col {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 15px;
+}
+
+.pattern-card-4col div {
+  border: 1px solid var(--color-border);
+  padding: 12px;
+  background: #f9f9f9;
+  font-size: 0.9em;
+}
+
+.pattern-card-mixed {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 20px;
+}
+
+.pattern-card-mixed :first-child {
+  grid-row: span 2;
+}
+
+/* Flowchart Patterns */
+.pattern-flowchart-h {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+}
+
+.pattern-flowchart-h > div {
+  border: 2px solid var(--color-text-base);
+  padding: 12px 20px;
+  text-align: center;
+  flex: 1;
+  position: relative;
+}
+
+.pattern-flowchart-h > div:not(:last-child)::after {
+  content: '→';
+  position: absolute;
+  right: -18px;
+  font-size: 20pt;
+  color: var(--color-accent-blue);
+}
+
+.pattern-flowchart-v {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.pattern-flowchart-v > div {
+  border: 2px solid var(--color-text-base);
+  padding: 12px 20px;
+  text-align: center;
+  width: 80%;
+  position: relative;
+}
+
+.pattern-flowchart-v > div:not(:last-child)::after {
+  content: '↓';
+  position: absolute;
+  bottom: -20px;
+  font-size: 20pt;
+  color: var(--color-accent-blue);
+}
+
+.pattern-flowchart-d {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  align-items: center;
+}
+
+.pattern-flowchart-d > div:nth-child(1) {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.pattern-flowchart-d > div:nth-child(2) {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.pattern-flowchart-d > div:nth-child(3) {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.pattern-flowchart-d > div {
+  border: 2px solid var(--color-text-base);
+  padding: 12px 20px;
+  text-align: center;
+  position: relative;
+}
+
+.pattern-flowchart-d > div:nth-child(1)::after {
+  content: '↘';
+  position: absolute;
+  right: -25px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20pt;
+  color: var(--color-accent-blue);
+}
+
+.pattern-flowchart-d > div:nth-child(2)::after {
+  content: '↗';
+  position: absolute;
+  right: -25px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20pt;
+  color: var(--color-accent-blue);
+}
+
+.pattern-flowchart-c {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.pattern-flowchart-c > div {
+  border: 2px solid var(--color-text-base);
+  border-radius: 50%;
+  padding: 20px;
+  text-align: center;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.pattern-flowchart-c > div:not(:last-child)::after {
+  content: '↓';
+  position: absolute;
+  bottom: -25px;
+  font-size: 20pt;
+  color: var(--color-accent-blue);
+}
+
+/* Table Patterns */
+.pattern-table-simple table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.pattern-table-simple th,
+.pattern-table-simple td {
+  border: 1px solid var(--color-border);
+  padding: 10px;
+  text-align: left;
+}
+
+.pattern-table-simple th {
+  background: #f0f0f0;
+  font-weight: 700;
+}
+
+.pattern-table-multiheader table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.pattern-table-multiheader thead {
+  background: #f0f0f0;
+}
+
+.pattern-table-multiheader th {
+  border: 2px solid var(--color-text-base);
+  padding: 12px;
+  text-align: center;
+}
+
+.pattern-table-multiheader td {
+  border: 1px solid var(--color-border);
+  padding: 10px;
+}
+
+.pattern-table-fullwidth table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9em;
+}
+
+.pattern-table-fullwidth th,
+.pattern-table-fullwidth td {
+  border: 1px solid var(--color-border);
+  padding: 8px;
+  text-align: left;
+}
+
+.pattern-table-fullwidth th {
+  background: #f0f0f0;
+  font-weight: 700;
+}
+
+/* List Patterns */
+.pattern-list-bullet ul {
+  padding-left: 20px;
+}
+
+.pattern-list-bullet li {
+  margin: 8px 0;
+}
+
+.pattern-list-numbered ol {
+  padding-left: 20px;
+}
+
+.pattern-list-numbered li {
+  margin: 8px 0;
+}
+
+.pattern-list-mixed ul,
+.pattern-list-mixed ol {
+  padding-left: 20px;
+}
+
+.pattern-list-mixed li {
+  margin: 8px 0;
+}
+
+.pattern-list-nested ul,
+.pattern-list-nested ol {
+  padding-left: 30px;
+}
+
+.pattern-list-nested li {
+  margin: 6px 0;
+}
+
+.pattern-list-nested li ul,
+.pattern-list-nested li ol {
+  padding-left: 20px;
+}
+
+.pattern-list-indented p {
+  text-indent: 2em;
+  margin: 8px 0;
+}
+
+/* Media Patterns */
+.pattern-media-fullbleed img {
+  width: 100%;
+  height: auto;
+  margin: 20px 0;
+}
+
+.pattern-media-sidebyside {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: center;
+}
+
+.pattern-media-sidebyside img {
+  width: 100%;
+  height: auto;
+}
+
+.pattern-media-gallery-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.pattern-media-gallery-2 img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.pattern-media-gallery-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 15px;
+}
+
+.pattern-media-gallery-3 img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+/* Media Patterns */
+.pattern-media-fullbleed img {
+  width: 100%;
+  height: auto;
+  margin: 20px 0;
+}
+
+.pattern-media-sidebyside {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: center;
+}
+
+.pattern-media-sidebyside img {
+  width: 100%;
+  height: auto;
+}
+
+.pattern-media-gallery-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.pattern-media-gallery-2 img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.pattern-media-gallery-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 15px;
+}
+
+.pattern-media-gallery-3 img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+/* Highlight Patterns */
+.pattern-highlight-info {
+  border-left: 4px solid var(--color-accent-blue);
+  background: #f0f0ff;
+  padding: 15px;
+  margin: 15px 0;
+}
+
+.pattern-highlight-info::before {
+  content: 'ℹ ';
+  color: var(--color-accent-blue);
+  font-weight: 700;
+}
+
+.pattern-highlight-warning {
+  border-left: 4px solid var(--color-accent-red);
+  background: #fff0f0;
+  padding: 15px;
+  margin: 15px 0;
+}
+
+.pattern-highlight-warning::before {
+  content: '⚠ ';
+  color: var(--color-accent-red);
+  font-weight: 700;
+}
+
+.pattern-highlight-success {
+  border-left: 4px solid var(--color-accent-green);
+  background: #f0fff0;
+  padding: 15px;
+  margin: 15px 0;
+}
+
+.pattern-highlight-success::before {
+  content: '✓ ';
+  color: var(--color-accent-green);
+  font-weight: 700;
+}
+
+.pattern-highlight-error {
+  border-left: 4px solid var(--color-accent-red);
+  background: #ffeaea;
+  padding: 15px;
+  margin: 15px 0;
+}
+
+.pattern-highlight-error::before {
+  content: '❌ ';
+  color: var(--color-accent-red);
+  font-weight: 700;
+}
+
+/* Layout Patterns */
+.pattern-layout-2col {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+}
+
+.pattern-layout-3col {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.pattern-layout-asymmetric {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 25px;
+}
+
+/* Numeric Patterns */
+.pattern-numeric-progress {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pattern-numeric-progress .progress-bar {
+  width: 100%;
+  height: 20px;
+  background: var(--color-border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.pattern-numeric-progress .progress-fill {
+  height: 100%;
+  background: var(--color-accent-blue);
+  border-radius: 10px;
+}
+
+.pattern-numeric-badge {
+  display: inline-block;
+  background: var(--color-accent-blue);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.8em;
+  font-weight: 700;
+  margin: 0 4px;
+}
+
+.pattern-numeric-keynum {
+  font-size: 3em;
+  font-weight: 700;
+  color: var(--color-accent-blue);
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* ===========================================
+   Responsive Design (Mobile Compatibility)
+   =========================================== */
+
+/* Tablet breakpoint (768px and below) */
+@media screen and (max-width: 768px) {
+  .title-slide h1 {
+    font-size: 24pt !important;
+  }
+
+  .title-slide .subtitle {
+    font-size: 10pt !important;
+  }
+
+  .body-slide h2 {
+    font-size: 16pt !important;
+  }
+
+  .body-slide .lead {
+    font-size: 14pt !important;
+  }
+
+  /* Adjust card layouts for smaller screens */
+  .pattern-card-2col,
+  .pattern-card-3col,
+  .pattern-card-4col {
+    grid-template-columns: 1fr !important;
+    gap: 15px !important;
+  }
+
+  .pattern-layout-2col,
+  .pattern-layout-3col,
+  .pattern-layout-asymmetric {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  .pattern-media-sidebyside {
+    grid-template-columns: 1fr !important;
+  }
+
+  .pattern-media-gallery-2,
+  .pattern-media-gallery-3 {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Adjust table for mobile */
+  .pattern-table-fullwidth table {
+    font-size: 12px;
+  }
+
+  .pattern-table-fullwidth th,
+  .pattern-table-fullwidth td {
+    padding: 8px 4px !important;
+  }
+}
+
+/* Mobile breakpoint (480px and below) */
+@media screen and (max-width: 480px) {
+  .title-slide h1 {
+    font-size: 20pt !important;
+  }
+
+  .title-slide .subtitle {
+    font-size: 9pt !important;
+  }
+
+  .body-slide h2 {
+    font-size: 14pt !important;
+  }
+
+  .body-slide .lead {
+    font-size: 12pt !important;
+  }
+
+  /* Further reduce spacing on mobile */
+  .pattern-card-mixed .card-primary {
+    margin-bottom: 15px !important;
+  }
+
+  .pattern-card-mixed .card-secondary {
+    margin-bottom: 10px !important;
+  }
+
+  /* Adjust numeric patterns for mobile */
+  .pattern-numeric-keynum {
+    font-size: 2.5em !important;
+  }
+
+  .pattern-numeric-progress .progress-bar {
+    height: 16px !important;
+  }
+}
+
+/* ===========================================
+   Responsive Design
+   =========================================== */
+
+@media (max-width: 600px) {
+  /* Mobile adaptations */
+  .pattern-card-2col {
+    grid-template-columns: 1fr;
+  }
+
+  .pattern-card-3col {
+    grid-template-columns: 1fr;
+  }
+
+  .pattern-card-4col {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .body-slide {
+    padding: 20px;
+  }
+
+  .title-slide {
+    padding: 20px;
+  }
+
+  body {
+    font-size: 14pt;
+  }
+}
+
+/* ===========================================
+   Print/PDF Optimizations
+   =========================================== */
+
+@media print {
+  /* Ensure solid colors for PDF export */
+  .pattern-flowchart-h > div:not(:last-child)::after,
+  .pattern-flowchart-v > div:not(:last-child)::after {
+    color: var(--color-text-base);
+  }
+}
